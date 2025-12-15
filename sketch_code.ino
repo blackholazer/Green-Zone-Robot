@@ -4,8 +4,7 @@
 #define ECHO_PIN 10
 #define SERVO_PIN 11
 
-
-
+Servo manipulator;
 
 void setup() {
   pinMode(TRIG_PIN, OUTPUT);
@@ -17,9 +16,9 @@ void setup() {
 }
 
 void loop() {
-  int distance = getDistance(TRIG_PIN, ECHO_PIN);
+  int distance = getDistance();
    if (distance > 10 && distance < 50) {
-    Serial.println(str(distance) + "см");
+    Serial.println(String(distance) + " см");
     manipulator.write(45);
     delay(2000);
     manipulator.write(90);
@@ -36,7 +35,7 @@ long getDistance() {
   digitalWrite(TRIG_PIN, LOW);
   
   long duration = pulseIn(ECHO_PIN, HIGH);
-  long distance = duration * 0.034;
+  long distance = duration * 0.034 / 2;
   
   return distance;
 }
