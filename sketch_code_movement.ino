@@ -15,7 +15,7 @@ void setup() {
   pinMode(L_MOTOR2, OUTPUT);
   pinMode(L_MOTOR2_DIR, OUTPUT);
 
-  pinMode(R_MOTOR1, OUTPUT)
+  pinMode(R_MOTOR1, OUTPUT);
   pinMode(R_MOTOR1_DIR, OUTPUT);
   pinMode(R_MOTOR2, OUTPUT);
   pinMode(R_MOTOR2_DIR, OUTPUT);
@@ -26,7 +26,6 @@ void setup() {
 void loop() {
 
 }
-
 
 
 void move_foward(speed){
