@@ -78,3 +78,11 @@ void turn_left(speed){
   digitalWrite(R_MOTOR2_DIR, HIGH);
 
 }
+
+void motors_stop(){
+  analogWrite(L_MOTOR1, 0);
+  analogWrite(L_MOTOR2, 0);
+  analogWrite(R_MOTOR1, 0);
+  analogWrite(R_MOTOR2, 0);
+
+}
