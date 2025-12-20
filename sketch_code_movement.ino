@@ -20,14 +20,14 @@ void setup() {
   pinMode(R_MOTOR2, OUTPUT);
   pinMode(R_MOTOR2_DIR, OUTPUT);
 
-  Serial.begin(9600)
+  Serial.begin(9600);
 }
 
 void loop() {
 
 }
 
-void move_foward(speed){
+void move_forward(int speed){
   analogWrite(L_MOTOR1, speed);
   analogWrite(L_MOTOR2, speed);
   digitalWrite(L_MOTOR1_DIR, HIGH);
@@ -40,7 +40,7 @@ void move_foward(speed){
 
 }
 
-void move_backward(speed){
+void move_backward(int speed){
   analogWrite(L_MOTOR1, speed);
   analogWrite(L_MOTOR2, speed);
   digitalWrite(L_MOTOR1_DIR, LOW);
@@ -53,7 +53,7 @@ void move_backward(speed){
 
 }
 
-void turn_right(speed){
+void turn_right(int speed){
   analogWrite(L_MOTOR1, speed);
   analogWrite(L_MOTOR2, speed);
   digitalWrite(L_MOTOR1_DIR, HIGH);
@@ -66,7 +66,7 @@ void turn_right(speed){
 
 }
 
-void turn_left(speed){
+void turn_left(int speed){
   analogWrite(L_MOTOR1, speed);
   analogWrite(L_MOTOR2, speed);
   digitalWrite(L_MOTOR1_DIR, LOW);
