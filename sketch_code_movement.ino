@@ -5,9 +5,9 @@ int L_MOTOR2 = 6
 int L_MOTOR2_DIR = 8
 
 int R_MOTOR1 = 9
-int R_MOTOR1_DIR = 11
+int R_MOTOR1_DIR = 12
 int R_MOTOR2 = 10
-int R_MOTOR2_DIR = 12
+int R_MOTOR2_DIR = 13
 
 void setup() {
   pinMode(L_MOTOR1, OUTPUT);
