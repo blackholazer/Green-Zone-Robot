@@ -1,15 +1,13 @@
-// устанавливаем пины
-int L_MOTOR1 = 5
-int L_MOTOR1_DIR = 7
-int L_MOTOR2 = 6
-int L_MOTOR2_DIR = 8
+int L_MOTOR1 = 5;
+int L_MOTOR1_DIR = 7;
+int L_MOTOR2 = 6;
+int L_MOTOR2_DIR = 8;
 
-int R_MOTOR1 = 9
-int R_MOTOR1_DIR = 12
-int R_MOTOR2 = 10
-int R_MOTOR2_DIR = 13
+int R_MOTOR1 = 9;
+int R_MOTOR1_DIR = 12;
+int R_MOTOR2 = 10;
+int R_MOTOR2_DIR = 13;
 
-// настраивавем пины
 void setup() {
   pinMode(L_MOTOR1, OUTPUT);
   pinMode(L_MOTOR1_DIR, OUTPUT);
