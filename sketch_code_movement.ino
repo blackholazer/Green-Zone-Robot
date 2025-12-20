@@ -1,4 +1,4 @@
-
+// устанавливаем пины
 int L_MOTOR1 = 5
 int L_MOTOR1_DIR = 7
 int L_MOTOR2 = 6
@@ -9,6 +9,7 @@ int R_MOTOR1_DIR = 12
 int R_MOTOR2 = 10
 int R_MOTOR2_DIR = 13
 
+// настраивавем пины
 void setup() {
   pinMode(L_MOTOR1, OUTPUT);
   pinMode(L_MOTOR1_DIR, OUTPUT);
@@ -21,12 +22,14 @@ void setup() {
   pinMode(R_MOTOR2_DIR, OUTPUT);
 
   Serial.begin(9600);
+  
 }
 
 void loop() {
 
 }
 
+// движение вперед
 void move_forward(int speed){
   analogWrite(L_MOTOR1, speed);
   analogWrite(L_MOTOR2, speed);
@@ -40,6 +43,7 @@ void move_forward(int speed){
 
 }
 
+// движение назад
 void move_backward(int speed){
   analogWrite(L_MOTOR1, speed);
   analogWrite(L_MOTOR2, speed);
@@ -53,6 +57,7 @@ void move_backward(int speed){
 
 }
 
+// танковый поворот вправо
 void turn_right(int speed){
   analogWrite(L_MOTOR1, speed);
   analogWrite(L_MOTOR2, speed);
@@ -66,6 +71,7 @@ void turn_right(int speed){
 
 }
 
+// танковый поворот влево
 void turn_left(int speed){
   analogWrite(L_MOTOR1, speed);
   analogWrite(L_MOTOR2, speed);
@@ -79,6 +85,7 @@ void turn_left(int speed){
 
 }
 
+// останавливаем моторы
 void motors_stop(){
   analogWrite(L_MOTOR1, 0);
   analogWrite(L_MOTOR2, 0);
