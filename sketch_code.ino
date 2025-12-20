@@ -1,7 +1,5 @@
-// подлючаем библиотеку
 #include <Servo.h>
 
-// определяем пины
 #define trig 3
 #define echo 2
 #define servo 11
@@ -9,7 +7,6 @@
 // создаем обьект manipulator для сервопривода
 Servo manipulator;
 
-// настраиваем пины
 void setup() {
   pinMode(trig, OUTPUT);
   pinMode(echo, INPUT);
