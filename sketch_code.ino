@@ -1,20 +1,26 @@
+// подлючаем библиотеку
 #include <Servo.h>
 
-#define TRIG_PIN 9
-#define ECHO_PIN 10
-#define SERVO_PIN 11
+// определяем пины
+#define trig 3
+#define echo 2
+#define servo 11
 
+// создаем обьект manipulator для сервопривода
 Servo manipulator;
 
+// настраиваем пины
 void setup() {
-  pinMode(TRIG_PIN, OUTPUT);
-  pinMode(ECHO_PIN, INPUT);
-  manipulator.attach(SERVO_PIN);
-  manipulator.write(90);
-  Serial.begin(9600);
+  pinMode(trig, OUTPUT);
+  pinMode(echo, INPUT);
 
+  manipulator.attach(servo);
+  manipulator.write(90);
+
+  Serial.begin(9600);
 }
 
+// обнаруживаем мусор и подбираем его
 void loop() {
   int distance = getDistance();
    if (distance > 10 && distance < 50) {
@@ -27,14 +33,15 @@ void loop() {
   delay(500);
 }
 
+// функция для определения расстояния до обьекта
 long getDistance() {
-  digitalWrite(TRIG_PIN, LOW);
+  digitalWrite(trig, LOW);
   delayMicroseconds(2);
-  digitalWrite(TRIG_PIN, HIGH);
+  digitalWrite(trig, HIGH);
   delayMicroseconds(10);
-  digitalWrite(TRIG_PIN, LOW);
+  digitalWrite(trig, LOW);
   
-  long duration = pulseIn(ECHO_PIN, HIGH);
+  long duration = pulseIn(echo, HIGH);
   long distance = duration * 0.034 / 2;
   
   return distance;
